@@ -45,12 +45,12 @@
 			}
 		}
 		*/
-		function calculate(expression) {
+		function cal(expression) {
 			return new Function('return ' + expression)();
 		}
-		const operations = {
+		const ope = {
 			'C': () => document.getElementById("display").textContent = '',
-			'=': () => document.getElementById("display").textContent = calculate(document.getElementById("display").textContent),
+			'=': () => document.getElementById("display").textContent = cal(document.getElementById("display").textContent),
 			'x': () => document.getElementById("display").textContent += '*',
 			'-': () => document.getElementById("display").textContent += '-',
 			'+': () => document.getElementById("display").textContent += '+',
@@ -58,8 +58,8 @@
 		};
 
 		function myFunction(value) {
-			if (operations[value]) {
-				operations[value]();
+			if (ope[value]) {
+				ope[value]();
 			} else {
 				document.getElementById("display").textContent += value;
 			}
